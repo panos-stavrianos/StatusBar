@@ -7,23 +7,36 @@
     tools:context=".MainActivity">
 
     <gr.osnet.statusbar.StatusBar
-        android:id="@+id/status_bar"
+        android:id="@+id/status_bar2"
         android:layout_width="0dp"
-        android:layout_height="29dp"
-
+        android:layout_height="30dp"
         android:gravity="center"
         android:text="Connected to server!"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
-        app:bottomLeftRadius="20"
-        app:bottomRightRadius="20"
+        app:drawableColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:topLeftRadius="20dp"
+        app:topRightRadius="20dp" />
+
+    <gr.osnet.statusbar.StatusBar
+        android:id="@+id/status_bar"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Connected to server!"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:bottomLeftRadius="20dp"
+        app:bottomRightRadius="20dp"
         app:drawableColor="@color/colorPrimary"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:topLeftRadius="0"
-        app:topRightRadius="0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/dummy_1"
@@ -60,5 +73,33 @@
         app:layout_constraintEnd_toStartOf="@+id/dummy_3"
         app:layout_constraintStart_toEndOf="@+id/dummy_1"
         app:layout_constraintTop_toBottomOf="@+id/status_bar" />
+
+    <Button
+        android:id="@+id/hide_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Hide Up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dummy_2" />
+
+    <Button
+        android:id="@+id/hide_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Hide Down"
+        app:layout_constraintBottom_toTopOf="@+id/status_bar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
