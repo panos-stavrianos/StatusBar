@@ -1,0 +1,10 @@
+<resources>
+    <declare-styleable name="StatusBar">
+        <attr name="bottomLeftRadius" format="integer" />
+        <attr name="bottomRightRadius" format="integer" />
+        <attr name="topLeftRadius" format="integer" />
+        <attr name="topRightRadius" format="integer" />
+        <attr name="drawableColor" format="color" />
+    </declare-styleable>
+</resources>
+
