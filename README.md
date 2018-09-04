@@ -1,4 +1,5 @@
-# Android Status Bar
+
+# Android Status Bar (Under Development)
 ![alt text](https://github.com/panos-stavrianos/StatusBar/blob/master/preview.gif "Preview")
 # Usage
 
