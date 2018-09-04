@@ -35,10 +35,15 @@ dependencies {
 ```
 
 ```kotlin
-status_bar.slideUpDown(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")//slide up then down with the new values
+//slide up then down with the new values
+status_bar.slideUpDown(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")
 
-status_bar.slideDownUp(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")//slide down then up with the new values
+//slide down then up with the new values
+status_bar.slideDownUp(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")
 
-status_bar.hideUp()//slide up and hide
-status_bar.hideDown()//slide down and hide
+//slide up and hide
+status_bar.hideUp()
+
+//slide down and hide
+status_bar.hideDown()
 ```
