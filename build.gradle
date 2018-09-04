@@ -19,13 +19,13 @@ buildscript {
 }
 
 
-
 allprojects {
     repositories {
         maven { url 'https://jitpack.io' }
         google()
         jcenter()
     }
+
 }
 
 
@@ -33,3 +33,15 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+
+/*
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+artifacts {
+    archives sourcesJar
+}
+ */
