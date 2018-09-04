@@ -35,9 +35,10 @@ dependencies {
 ```
 
 ```kotlin
-status_bar.slide(resources.getColor(R.color.colorGreen), newText = "Connected")
-```
+status_bar.slideUpDown(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")//slide up then down with the new values
 
-```kotlin
-status_bar.justApply(resources.getColor(R.color.colorGreen), newText = "Connected")
+status_bar.slideDownUp(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")//slide down then up with the new values
+
+status_bar.hideUp()//slide up and hide
+status_bar.hideDown()//slide down and hide
 ```
