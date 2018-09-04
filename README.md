@@ -20,5 +20,9 @@
 ```
 
 ```kotlin
-status_bar.slide()
+status_bar.slide(resources.getColor(R.color.colorGreen), newText = "Connected")
+```
+
+```kotlin
+status_bar.justApply(resources.getColor(R.color.colorGreen), newText = "Connected")
 ```
