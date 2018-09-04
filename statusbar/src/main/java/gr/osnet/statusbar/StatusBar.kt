@@ -119,8 +119,6 @@ class StatusBar @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
     fun justApply(backgroundColor: Int? = null) {
         backgroundColor?.let { drawableColor = it }
-        animation?.cancel()
-        visibility = View.VISIBLE
         setBackgroundDrawable(drawable)
     }
 }

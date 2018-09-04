@@ -1,6 +1,20 @@
 
 # Android Status Bar (Under Development)
 ![alt text](https://github.com/panos-stavrianos/StatusBar/blob/master/preview.gif "Preview")
+
+## Import to your project
+Put this into your `app/build.gradle`:
+```
+repositories {
+  maven {
+    url "https://jitpack.io"
+  }
+}
+
+dependencies {
+    implementation 'com.github.panos-stavrianos:StatusBar:0.0.3'
+}
+```
 # Usage
 
 ```xml
