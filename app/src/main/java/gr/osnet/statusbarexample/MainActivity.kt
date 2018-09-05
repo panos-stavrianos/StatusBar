@@ -12,16 +12,16 @@ class MainActivity : AppCompatActivity() {
 
 
         dummy_1.setOnClickListener {
-            status_bar.slideUpDown(resources.getColor(R.color.colorGreen), newText = "Connected")
-            status_bar2.slideDownUp(resources.getColor(R.color.colorGreen), newText = "Connected")
+            status_bar.showUp(resources.getColor(R.color.colorGreen), newText = "Connected")
+            status_bar2.showDown(resources.getColor(R.color.colorGreen), newText = "Connected")
         }
         dummy_2.setOnClickListener {
-            status_bar.slideUpDown(resources.getColor(R.color.colorPurple), newText = "Download Complete!")
-            status_bar2.slideDownUp(resources.getColor(R.color.colorPurple), newText = "Download Complete!")
+            status_bar.showUp(resources.getColor(R.color.colorPurple), newText = "Download Complete!")
+            status_bar2.showDown(resources.getColor(R.color.colorPurple), newText = "Download Complete!")
         }
         dummy_3.setOnClickListener {
-            status_bar.slideUpDown(resources.getColor(R.color.colorRed), newText = "Disconnected")
-            status_bar2.slideDownUp(resources.getColor(R.color.colorRed), newText = "Disconnected")
+            status_bar.showUp(resources.getColor(R.color.colorRed), newText = "Disconnected")
+            status_bar2.showDown(resources.getColor(R.color.colorRed), newText = "Disconnected")
         }
 
         hide_up.setOnClickListener {
@@ -30,6 +30,14 @@ class MainActivity : AppCompatActivity() {
 
         hide_down.setOnClickListener {
             status_bar2.hideDown()
+        }
+        hide.setOnClickListener {
+            status_bar.hide()
+            status_bar2.hide()
+        }
+        show.setOnClickListener {
+            status_bar.show()
+            status_bar2.show()
         }
     }
 }

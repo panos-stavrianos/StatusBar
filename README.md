@@ -43,19 +43,50 @@ The added attributes are:
     app:drawableColor="@color/colorPrimary"
    />
 ```
+All parameters are optional.
 
+In kotlin we can ignore a parameter and it's value will not change.
+
+In java we can pass a parameter as null and it's value will not change.
 ```kotlin
+//KOTLIN
 //slide up then down with the new values
-status_bar.slideUpDown(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")
+status_bar.showUp(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")
 
 //slide down then up with the new values
-status_bar.slideDownUp(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")
+status_bar.showDown(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")
+
+//show immediately
+status_bar.show(resources.getColor(R.color.colorGreen),resources.getColor(R.color.white)  "Connected")
 
 //slide up and hide
 status_bar.hideUp()
 
 //slide down and hide
 status_bar.hideDown()
+
+status_bar.hide()//hide immediately
+
+```
+```java
+//JAVA
+//slide up then down with the new values
+status_bar.showUp(getResources().getColor(R.color.colorGreen), null, "Connected");
+
+//slide down then up with the new values
+status_bar2.showDown(getResources().getColor(R.color.colorGreen), null, "Connected");
+
+//show immediately
+status_bar.show(null, null, null);
+
+//slide up and hide
+status_bar.hideUp();
+
+//slide down and hide
+status_bar.hideDown();
+
+status_bar.hide();//hide immediately
+
 ```
 # License
 

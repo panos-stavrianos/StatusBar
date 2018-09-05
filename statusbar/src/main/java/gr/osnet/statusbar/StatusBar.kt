@@ -17,15 +17,6 @@ class StatusBar @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     var drawableColor = 0
     var showOnStart = true
     var isMinimized: Boolean = false
-    val drawable
-        get() = DrawableBuilder()
-                .rectangle()
-                .solidColor(drawableColor)
-                .bottomLeftRadius(bottomLeftRadius) // in pixels
-                .bottomRightRadius(bottomRightRadius) // in pixels
-                .topLeftRadius(topLeftRadius)
-                .topRightRadius(topRightRadius)
-                .build()
 
     init {
         context.theme.obtainStyledAttributes(
@@ -39,28 +30,78 @@ class StatusBar @JvmOverloads constructor(context: Context, attrs: AttributeSet?
                 topRightRadius = getDimensionPixelSize(R.styleable.StatusBar_topRightRadius, 0)
                 drawableColor = getColor(R.styleable.StatusBar_drawableColor, 0)
                 showOnStart = getBoolean(R.styleable.StatusBar_drawableColor, true)
-                justApply()
+                show()
             } finally {
                 recycle()
             }
         }
     }
 
-    fun slideUpDown(backgroundColor: Int? = null, textColor: Int? = null, newText: String? = null) {
+    private val hideAnimationListener = object : Animation.AnimationListener {
+        override fun onAnimationRepeat(p0: Animation?) = Unit
+
+        override fun onAnimationEnd(animation: Animation?) {
+            visibility = View.INVISIBLE
+            isMinimized = true
+        }
+
+        override fun onAnimationStart(animation: Animation?) = Unit
+    }
+
+
+    fun show(backgroundColor: Int? = null, textColor: Int? = null, newText: String? = null) {
+        if (isMinimized) {
+            visibility = View.VISIBLE
+            isMinimized = false
+        }
+        backgroundColor?.let { drawableColor = it }
+        setTextColor(textColor ?: currentTextColor)
+        newText?.let { text = it }
+        val drawable = DrawableBuilder()
+                .rectangle()
+                .solidColor(drawableColor)
+                .bottomLeftRadius(bottomLeftRadius) // in pixels
+                .bottomRightRadius(bottomRightRadius) // in pixels
+                .topLeftRadius(topLeftRadius)
+                .topRightRadius(topRightRadius)
+                .build()
+        setBackgroundDrawable(drawable)
+    }
+
+
+    fun showUp(backgroundColor: Int? = null, textColor: Int? = null, newText: String? = null) {
         animateShowHide(backgroundColor, textColor, newText, R.anim.slide_up_down_hide, R.anim.slide_up_down_show)
     }
 
-    fun slideDownUp(backgroundColor: Int? = null, textColor: Int? = null, newText: String? = null) {
+    fun showDown(backgroundColor: Int? = null, textColor: Int? = null, newText: String? = null) {
         animateShowHide(backgroundColor, textColor, newText, R.anim.slide_down_up_hide, R.anim.slide_down_up_show)
     }
 
+    fun hideUp() {
+        hide(R.anim.slide_up_down_hide)
+    }
+
+
+    fun hideDown() {
+        hide(R.anim.slide_down_up_hide)
+    }
+
+    fun hide() {
+        visibility = View.INVISIBLE
+        isMinimized = true
+    }
+
+    private fun hide(hide: Int) {
+        if (isMinimized)
+            return
+        val anim = AnimationUtils.loadAnimation(context, hide)
+        anim.setAnimationListener(hideAnimationListener)
+        startAnimation(anim)
+    }
+
     private fun animateShowHide(backgroundColor: Int? = null, textColor: Int? = null, newText: String? = null, hide: Int, show: Int) {
-        backgroundColor?.let { drawableColor = it }
         if (isMinimized) {
-            visibility = View.VISIBLE
-            newText?.let { text = it }
-            setTextColor(textColor ?: currentTextColor)
-            setBackgroundDrawable(drawable)
+            show(backgroundColor, textColor, newText)
             startAnimation(AnimationUtils.loadAnimation(context, show))
             isMinimized = false
         } else {
@@ -69,9 +110,7 @@ class StatusBar @JvmOverloads constructor(context: Context, attrs: AttributeSet?
                 override fun onAnimationRepeat(p0: Animation?) = Unit
 
                 override fun onAnimationEnd(animation: Animation?) {
-                    newText?.let { text = it }
-                    setTextColor(textColor ?: currentTextColor)
-                    setBackgroundDrawable(drawable)
+                    show(backgroundColor, textColor, newText)
                     startAnimation(AnimationUtils.loadAnimation(context, show))
                     isMinimized = false
                 }
@@ -80,45 +119,5 @@ class StatusBar @JvmOverloads constructor(context: Context, attrs: AttributeSet?
             })
             startAnimation(animSlideUp)
         }
-    }
-
-    fun hideUp() {
-        if (isMinimized)
-            return
-        val anim = AnimationUtils.loadAnimation(context, R.anim.slide_up_down_hide)
-        anim.setAnimationListener(object : Animation.AnimationListener {
-            override fun onAnimationRepeat(p0: Animation?) = Unit
-
-            override fun onAnimationEnd(animation: Animation?) {
-                visibility = View.INVISIBLE
-                isMinimized = true
-            }
-
-            override fun onAnimationStart(animation: Animation?) = Unit
-        })
-        startAnimation(anim)
-    }
-
-
-    fun hideDown() {
-        if (isMinimized)
-            return
-        val anim = AnimationUtils.loadAnimation(context, R.anim.slide_down_up_hide)
-        anim.setAnimationListener(object : Animation.AnimationListener {
-            override fun onAnimationRepeat(p0: Animation?) = Unit
-
-            override fun onAnimationEnd(animation: Animation?) {
-                visibility = View.INVISIBLE
-                isMinimized = true
-            }
-
-            override fun onAnimationStart(animation: Animation?) = Unit
-        })
-        startAnimation(anim)
-    }
-
-    fun justApply(backgroundColor: Int? = null) {
-        backgroundColor?.let { drawableColor = it }
-        setBackgroundDrawable(drawable)
     }
 }
