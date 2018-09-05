@@ -19,7 +19,7 @@ dependencies {
 # Usage
 StatusBar is actually a TextView with the ability to have round corners and slide up and down.
 
-###Added attributes
+### Added attributes
 
 | Attribute | Type |
 | --- | --- |
