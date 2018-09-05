@@ -1,6 +1,6 @@
 [![Release](https://jitpack.io/v/panos-stavrianos/StatusBar.svg)](https://jitpack.io/#panos-stavrianos/StatusBar)
 
-# Android Status Bar (Under Development)
+# Android Status Bar
 ![alt text](https://github.com/panos-stavrianos/StatusBar/blob/master/preview.gif "Preview")
 
 ## Import to your project
