@@ -1,5 +1,6 @@
 [![Release](https://jitpack.io/v/panos-stavrianos/StatusBar.svg)](https://jitpack.io/#panos-stavrianos/StatusBar)
-
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?token=kklmQrFQC3s1lODDweD4S-rujKR06YpUPouz7IKHsfv2jZi6rw2S2P18QVkuXRP4mGcTg0&country.x=GR&locale.x=GR)
 # Android Status Bar
 ![alt text](https://github.com/panos-stavrianos/StatusBar/blob/master/preview.gif "Preview")
 
