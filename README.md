@@ -74,7 +74,7 @@ status_bar.hide()//hide immediately
 status_bar.showUp(getResources().getColor(R.color.colorGreen), null, "Connected");
 
 //slide down then up with the new values
-status_bar2.showDown(getResources().getColor(R.color.colorGreen), null, "Connected");
+status_bar.showDown(getResources().getColor(R.color.colorGreen), null, "Connected");
 
 //show immediately
 status_bar.show(null, null, null);
