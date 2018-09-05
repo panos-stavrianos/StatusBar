@@ -1,5 +1,4 @@
-[![Release](https://jitpack.io/v/User/Repo.svg)]
-(https://jitpack.io/#User/Repo)
+[![Release](https://jitpack.io/v/User/Repo.svg)](https://jitpack.io/#User/Repo)
 
 # Android Status Bar (Under Development)
 ![alt text](https://github.com/panos-stavrianos/StatusBar/blob/master/preview.gif "Preview")
