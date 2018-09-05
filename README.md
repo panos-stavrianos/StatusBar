@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.panos-stavrianos:StatusBar:0.0.6'
+    implementation 'com.github.panos-stavrianos:StatusBar:1.0.1'
 }
 ```
 # Usage
