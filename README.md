@@ -26,6 +26,15 @@ The added attributes are:
 4. topRightRadius :Dimension
 5. drawableColor :Color
 6. showOnStart :Boolean
+ 
+| Attribute | Type |
+| --- | --- |
+| `bottomLeftRadius` | Dimension |
+| `bottomRightRadius` | Dimension |
+| `topLeftRadius` | Dimension |
+| `drawableColor` | Dimension |
+| `drawableColor` | Color |
+| `showOnStart` | Boolean | 
 
 ```xml
 <gr.osnet.statusbar.StatusBar
