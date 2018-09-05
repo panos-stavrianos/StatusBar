@@ -68,7 +68,8 @@ status_bar.hideUp()
 //slide down and hide
 status_bar.hideDown()
 
-status_bar.hide()//hide immediately
+//hide immediately
+status_bar.hide()
 
 ```
 ```java
@@ -88,7 +89,8 @@ status_bar.hideUp();
 //slide down and hide
 status_bar.hideDown();
 
-status_bar.hide();//hide immediately
+//hide immediately
+status_bar.hide();
 
 ```
 # License
