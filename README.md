@@ -19,14 +19,8 @@ dependencies {
 # Usage
 StatusBar is actually a TextView with the ability to have round corners and slide up and down.
 
-The added attributes are:
-1. bottomLeftRadius :Dimension
-2. bottomRightRadius :Dimension
-3. topLeftRadius :Dimension
-4. topRightRadius :Dimension
-5. drawableColor :Color
-6. showOnStart :Boolean
- 
+###Added attributes
+
 | Attribute | Type |
 | --- | --- |
 | `bottomLeftRadius` | Dimension |
